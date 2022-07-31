@@ -1,13 +1,13 @@
 function findIcon(type) {
     switch(type) {
         case 'phone':
-            return <i class="fa-solid fa-phone"></i>;
+            return <i className="fa-solid fa-phone"></i>;
         case 'email':
-            return <i class="fa-solid fa-envelope"></i>
+            return <i className="fa-solid fa-envelope"></i>
         case 'linkedIn':
-            return <i class="fa-brands fa-linkedin"></i>
+            return <i className="fa-brands fa-linkedin"></i>
         default:
-            return <i class="fa-solid fa-globe"></i>;
+            return <i className="fa-solid fa-globe"></i>;
     }
 }
 
