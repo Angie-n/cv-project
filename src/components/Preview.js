@@ -6,7 +6,7 @@ const Header = props => {
 
     return (
         <div id="preview-heading">
-          <figure><img src={picture} alt=""/></figure>
+          <div><figure><img src={picture} alt=""/></figure></div>
           <div>
             <h1>{name}</h1>
             <p>{title}</p>
