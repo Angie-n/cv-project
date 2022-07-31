@@ -24,14 +24,14 @@ const Sidebar = props => {
             <h2>Contacts</h2>
             <hr />
             <ul>
-              {contacts.map(c => {return <li><div>{c.icon}<p>{c.info}</p></div></li>})}
+              {contacts.map((c,i) => {return <li key={"contact-" + i}><div>{c.icon}<p>{c.info}</p></div></li>})}
             </ul>
           </div>
           <div id="preview-skills">
             <h2>Skills</h2>
             <hr />
             <ul>
-              {skills.map(s => {return <li>{s}</li>})}
+              {skills.map((s,i) => {return <li key={"skill-" + i}>{s}</li>})}
             </ul>
           </div>
         </div>
@@ -52,7 +52,7 @@ const Main = props => {
             <h2>Education</h2>
             <hr />
             <ul>
-              {education.map(e => {return <li>
+              {education.map((e,i) => {return <li key={"education-" + i}>
                 <h3>{e.name}</h3>
                 <p className="preview-date">{e.startDate} - {e.endDate}</p>
                 <p>{e.location}</p>
@@ -63,7 +63,7 @@ const Main = props => {
             <h2>Work Experience</h2>
             <hr />
             <ul>
-              {experience.map(e => {return <li>
+              {experience.map((e,i) => {return <li key={"experience-" + i}>
                 <h3>{e.title}</h3>
                 <p className="preview-date">{e.startDate} - {e.endDate}</p>
                 <p>{e.company + ", " + e.location}</p>
