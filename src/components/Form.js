@@ -109,7 +109,7 @@ const Qualifications = props => {
         return (
             <p className="skill-field">
                 <input type="text" id="skill" name="skill" onChange={e => changeSkill(e.target.value)} value={skills[i]}></input>
-                <button type="button" className="form-delete-btn" onClick={e => removeSkill()}><i className="fa-solid fa-delete-left"></i></button>
+                <button title="Delete Skill" type="button" className="form-delete-btn" onClick={e => removeSkill()}><i className="fa-solid fa-delete-left"></i></button>
             </p>
         );
     }
@@ -161,7 +161,7 @@ const Qualifications = props => {
                     <label htmlFor="educationLocation">Location</label>
                     <input type="text" className="educationLocation" name="educationLocation" onChange={e => changeEducation("location", e.target.value)} value={education[i].location}></input>
                 </p>
-                <button type="button" className="form-delete-btn" onClick={e => removeEducation()}>X</button>
+                <button title="Delete Education" type="button" className="form-delete-btn" onClick={e => removeEducation()}>X</button>
             </div>
         );
     }
@@ -226,7 +226,7 @@ const Qualifications = props => {
                     <label htmlFor="experienceDescription">Description</label>
                     <textarea className="experienceDescription" name="experienceDescription" onChange={e => changeExperience("description", e.target.value)} value={experience[i].description}></textarea>
                 </p>
-                <button type="button" className="form-delete-btn" onClick={e => removeExperience()}>X</button>
+                <button title="Delete Experience" type="button" className="form-delete-btn" onClick={e => removeExperience()}>X</button>
             </div>
         );
     }
