@@ -10,14 +10,14 @@ class App extends Component {
     super();
 
     this.state = {
-      name: "Jane Doe",
-      title: "Professional Title",
+      name: "",
+      title: "",
       picture: defaultProfileImage,
-      contacts: [infoObjects.Contact("phone", "(123) 456-7891"), infoObjects.Contact("email", "professional@gmail.com"), infoObjects.Contact("linkedIn", "www.linkedin.com/jane-doe-10533m22")],
-      skills: ["Javascript", "HTML", "CSS", "Node.js", "React.js"],
-      profile: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rhoncus porta enim, non accumsan massa blandit id. Proin consequat porttitor urna ut fermentum.",
-      education: [infoObjects.Education("Degree/Course", "Start", "End", "Location"), infoObjects.Education("Degree/Course", "Start", "End", "Location")],
-      experience: [infoObjects.Experience("Title", "Start", "End", "Company", "Location")],
+      contacts: [infoObjects.Contact("phone", ""), infoObjects.Contact("email", ""), infoObjects.Contact("linkedIn", "")],
+      skills: [],
+      profile: "",
+      education: [infoObjects.Education("", "", "", "")],
+      experience: [infoObjects.Experience("", "", "", "", "", "")],
     }
   }
 
@@ -28,9 +28,9 @@ class App extends Component {
       <div>
         <form>
           <formComponent.Header></formComponent.Header>
-          <formComponent.Introduction name={name} title={title} profile={profile} picture={picture}></formComponent.Introduction>
-          <formComponent.Contacts contacts={contacts}></formComponent.Contacts>
-          <formComponent.Qualifications skills={skills} education={education} experience={experience}></formComponent.Qualifications>
+          <formComponent.Introduction setState={p => this.setState(p)}></formComponent.Introduction>
+          <formComponent.Contacts setState={p => this.setState(p)} contacts={contacts}></formComponent.Contacts>
+          <formComponent.Qualifications setState={p => this.setState(p)} skills={skills} education={education} experience={experience}></formComponent.Qualifications>
         </form>
         <div id="preview">
           <previewComponent.Header name={name} title={title} picture={picture}></previewComponent.Header>
