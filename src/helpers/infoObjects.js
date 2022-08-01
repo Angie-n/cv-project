@@ -20,8 +20,8 @@ const Education = (name, startDate, endDate, location) => {
     return {name, startDate, endDate, location};
 }
 
-const Experience = (title, startDate, endDate, company, location) => {
-    return {title, startDate, endDate, company, location}
+const Experience = (title, startDate, endDate, company, location, description) => {
+    return {title, startDate, endDate, company, location, description}
 }
 
 export {Contact, Education, Experience}
