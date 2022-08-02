@@ -4,6 +4,7 @@ import defaultProfileImage from "./assets/images/default-picture.png";
 import * as infoObjects from "./helpers/infoObjects";
 import * as formComponent from "./components/Form";
 import * as previewComponent from "./components/Preview";
+import Control from './components/Crop';
 
 class App extends Component {
   constructor() {
@@ -12,17 +13,19 @@ class App extends Component {
     this.state = {
       name: "",
       title: "",
-      picture: defaultProfileImage,
+      picture: infoObjects.Picture(defaultProfileImage, 0, 0, 0, 0, 1),
       contacts: [infoObjects.Contact("phone", ""), infoObjects.Contact("email", ""), infoObjects.Contact("linkedIn", "")],
       skills: [],
       profile: "",
       education: [infoObjects.Education("", "", "", "")],
       experience: [infoObjects.Experience("", "", "", "", "", "")],
+      showCrop: false,
+      cropIncrementSize: 10,
     }
   }
 
   render() {
-    const {name, title, picture, contacts, skills, profile, education, experience} = this.state;
+    const {name, title, picture, contacts, skills, profile, education, experience, showCrop, cropIncrementSize} = this.state;
 
     return (
       <div>
@@ -37,6 +40,7 @@ class App extends Component {
           <previewComponent.Sidebar contacts={contacts} skills={skills}></previewComponent.Sidebar>
           <previewComponent.Main profile={profile} education={education} experience={experience}></previewComponent.Main>
         </div>
+        <Control setState={p => this.setState(p)} picture={picture} showCrop={showCrop} cropIncrementSize={cropIncrementSize}></Control>
       </div>
     )
   }
