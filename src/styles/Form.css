@@ -97,6 +97,15 @@ form button:hover {
     color: red;
 }
 
+.crop-btn {
+    font-size: 0.8em;
+}
+
+#form-profile-image {
+    display: flex;
+    align-items: center;
+}
+
 @media only screen and (max-width: 1400px) {
     form {
         width: 80vw;
@@ -107,6 +116,6 @@ form button:hover {
 @media only screen and (max-width: 450px) {
     form {
         width: 98%;
-        min-width: 300px;
+        min-width: 350px;
     }
 }
