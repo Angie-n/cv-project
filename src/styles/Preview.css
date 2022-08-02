@@ -44,7 +44,7 @@ hr {
   align-items: center;
 }
 
-#preview-heading figure {
+.profile-picture-figure {
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -55,7 +55,7 @@ hr {
   background-color: white;
 }
 
-#preview-heading figure img {
+.profile-picture-figure img {
   width: 15vw;
 }
 
@@ -140,12 +140,12 @@ hr {
     font-size: 2.5vw;
   }
 
-  #preview-heading figure {
-    width: 18vw;
-    height: 18vw;
+  .profile-picture-figure {
+    width: 20vw;
+    height: 20vw;
   }
 
-  #preview-heading figure img {
-    width: 20vw;
+  .profile-picture-figure img {
+    width: 30vw;
   }
 }
