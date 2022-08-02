@@ -1,0 +1,141 @@
+:root {
+    --arrow-position: -10px;
+}
+
+#crop-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 420px;
+    height: 420px;
+    margin-top: -200px;
+    margin-left: -200px;
+    background-color: white;
+    border: 1px solid rgb(165, 162, 162);
+}
+
+#crop-container button {
+    border: none;
+    background-color: inherit;
+}
+
+#crop-header {
+    height: 80px;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+#crop-header h2 {
+    font-size: 2em;
+}
+
+#crop-exit-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: none;
+    color: rgb(165, 162, 162);
+    font-size: 1.8em;
+}
+
+#crop-exit-btn:hover {
+    color: black;
+}
+
+#crop-main {
+    height: 270px;
+    padding: 10px;
+    background-color: #0b5394ff;
+}
+
+#crop-main > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: auto;
+    width: 270px;
+    height: 270px;
+}
+
+#crop-preview-figure {
+    height: 200px;
+    width: 200px;
+}
+
+#crop-preview-figure img {
+    width: 300px;
+}
+
+.crop-move-btn {
+    position: absolute;
+    font-size: 2.5em;
+    color: white;
+}
+
+.crop-move-btn:hover {
+    color: gray;
+}
+
+.crop-move-btn:nth-child(2) {
+    top: var(--arrow-position);
+}
+
+.crop-move-btn:nth-child(3) {
+    bottom: var(--arrow-position);
+}
+
+.crop-move-btn:nth-child(4) {
+    left: var(--arrow-position);
+}
+
+.crop-move-btn:nth-child(5) {
+    right: var(--arrow-position);
+}
+
+#crop-additional-controls {
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.8em;
+}
+
+#crop-additional-controls button {
+    font-size: 1em;
+}
+
+#crop-additional-controls button:hover {
+    color: rgb(7, 133, 237);
+}
+
+#crop-scale-btns > button {
+    margin: 0 10px 0 10px;
+    font-size: 1.5em;
+}
+
+#crop-increment {
+    text-align: center;
+}
+
+.crop-increment-btn {
+    margin: 0 5px 0 5px;
+}
+
+.chosen-increment {
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 1400px) {
+    #crop-preview-figure {
+        height: 200px;
+        width: 200px;
+    }
+
+    #crop-preview-figure img {
+        width: 300px;
+    }
+  }
