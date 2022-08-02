@@ -26,9 +26,10 @@ const Introduction = props => {
                 <label htmlFor="profile">Profile</label>
                 <textarea id="profile" name="profile" onChange={e => setState({profile: e.target.value})}></textarea>
             </p>
-            <p>
+            <p id="form-profile-image">
                 <label htmlFor="picture">Profile Picture</label>
-                <input type="file" id="picture" name="picture" accept="image/*" onChange={e => setState({picture: window.URL.createObjectURL(e.target.files[0])})}></input>
+                <input type="file" id="picture" name="picture" accept="image/*" onChange={e => setState({picture: infoObjects.Picture(window.URL.createObjectURL(e.target.files[0]), 0, 0, 0, 0, 1)})}></input>
+                <button type="button" className="crop-btn" onClick={e => setState({showCrop: true})}><i className="fa-solid fa-crop-simple"></i><p>Crop</p></button>
             </p>
         </section>
     );
