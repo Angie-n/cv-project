@@ -29,7 +29,7 @@ const Control = props => {
                 setState({picture: Picture(picture.src, picture.marginLeft, picture.marginRight, picture.marginTop, picture.marginBottom, picture.scale - 0.1)});
                 break;
             case "reset":
-                setState({picture: Picture(picture.src, 0, 0, 0, 0, 1)})
+                setState({picture: Picture(picture.src, 0, 0, 0, 0, 1)});
                 break;
             default:
         }
@@ -51,7 +51,7 @@ const Control = props => {
             </div>
             <div id="crop-main">
                 <div>
-                    <div><figure className="profile-picture-figure" id="crop-preview-figure"><img src={picture.src} alt="" style={{marginLeft: picture.marginLeft, marginRight: picture.marginRight, marginTop: picture.marginTop, marginBottom: picture.marginBottom, transform: "scale(" + picture.scale + ")"}}/></figure></div>
+                    <div><figure className="profile-picture-figure" id="crop-preview-figure"><img src={picture.src} alt="" style={{marginLeft: picture.marginLeft + "%", marginRight: picture.marginRight + "%", marginTop: picture.marginTop + "%", marginBottom: picture.marginBottom + "%", transform: "scale(" + picture.scale + ")"}}/></figure></div>
                     <button type="button" className="crop-move-btn" onClick={e => changePicture("up")}><i className="fa-solid fa-arrow-up"></i></button>
                     <button type="button" className="crop-move-btn" onClick={e => changePicture("down")}><i className="fa-solid fa-arrow-down"></i></button>
                     <button type="button" className="crop-move-btn" onClick={e => changePicture("left")}><i className="fa-solid fa-arrow-left"></i></button>
@@ -66,9 +66,9 @@ const Control = props => {
                 <div id="crop-increment">
                     <p>Increment Size</p>
                     <div>
-                        <button type="button" className="crop-increment-btn" value="1" onClick={e => setState({cropIncrementSize: 1})}>1px</button>
-                        <button type="button" className="crop-increment-btn" value="10" onClick={e => setState({cropIncrementSize: 10})}>10px</button>
-                        <button type="button" className="crop-increment-btn" value="20" onClick={e => setState({cropIncrementSize: 20})}>20px</button>
+                        <button type="button" className="crop-increment-btn" value="1" onClick={e => setState({cropIncrementSize: 1})}>1%</button>
+                        <button type="button" className="crop-increment-btn" value="10" onClick={e => setState({cropIncrementSize: 10})}>10%</button>
+                        <button type="button" className="crop-increment-btn" value="50" onClick={e => setState({cropIncrementSize: 50})}>50%</button>
                         {applyIncrementBtnClass()}
                     </div>
                 </div>
