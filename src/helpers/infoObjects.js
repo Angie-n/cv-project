@@ -24,4 +24,8 @@ const Experience = (title, startDate, endDate, company, location, description) =
     return {title, startDate, endDate, company, location, description}
 }
 
-export {Contact, Education, Experience}
+const Picture = (src, marginLeft, marginRight, marginTop, marginBottom, scale) => {
+    return {src, marginLeft, marginRight, marginTop, marginBottom, scale};
+}
+
+export {Contact, Education, Experience, Picture}
