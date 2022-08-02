@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/cv-project/static/css/main.6389eca4.css",
+    "main.js": "/cv-project/static/js/main.8ef55cc2.js",
+    "static/media/EBGaramond-VariableFont_wght.ttf": "/cv-project/static/media/EBGaramond-VariableFont_wght.baa0e0cf79395becf7d7.ttf",
+    "static/media/EBGaramond-Bold.ttf": "/cv-project/static/media/EBGaramond-Bold.f6c11a06654319d1b8cf.ttf",
+    "static/media/default-picture.png": "/cv-project/static/media/default-picture.cada77e0e3d65fb5358e.png",
+    "index.html": "/cv-project/index.html",
+    "main.6389eca4.css.map": "/cv-project/static/css/main.6389eca4.css.map",
+    "main.8ef55cc2.js.map": "/cv-project/static/js/main.8ef55cc2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6389eca4.css",
+    "static/js/main.8ef55cc2.js"
+  ]
+}
