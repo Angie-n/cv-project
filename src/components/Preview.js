@@ -13,7 +13,7 @@ const Header = props => {
 
   return (
     <div id="preview-heading">
-      <div><figure><img src={picture} alt=""/></figure></div>
+      <div><figure className="profile-picture-figure"><img src={picture.src} alt="" style={{marginLeft: picture.marginLeft, marginRight: picture.marginRight, marginTop: picture.marginTop, marginBottom: picture.marginBottom, transform: "scale(" + picture.scale + ")"}}/></figure></div>
       <div>
         <h1>{nameDisplay}</h1>
         <p>{titleDisplay}</p>
