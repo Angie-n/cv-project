@@ -101,6 +101,10 @@ form button:hover {
     font-size: 0.8em;
 }
 
+form input[type="file"] {
+    max-width: 40%;
+}
+
 #form-profile-image {
     display: flex;
     align-items: center;
