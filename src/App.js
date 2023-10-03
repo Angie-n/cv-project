@@ -19,13 +19,14 @@ class App extends Component {
       profile: "",
       education: [infoObjects.Education("", "", "", "")],
       experience: [infoObjects.Experience("", "", "", "", "", "")],
+      project: [infoObjects.Project("", "")],
       showCrop: false,
       cropIncrementSize: 10,
     }
   }
 
   render() {
-    const {name, title, picture, contacts, skills, profile, education, experience, showCrop, cropIncrementSize} = this.state;
+    const {name, title, picture, contacts, skills, profile, education, experience, project, showCrop, cropIncrementSize} = this.state;
 
     return (
       <div>
@@ -33,12 +34,12 @@ class App extends Component {
           <formComponent.Header></formComponent.Header>
           <formComponent.Introduction setState={p => this.setState(p)}></formComponent.Introduction>
           <formComponent.Contacts setState={p => this.setState(p)} contacts={contacts}></formComponent.Contacts>
-          <formComponent.Qualifications setState={p => this.setState(p)} skills={skills} education={education} experience={experience}></formComponent.Qualifications>
+          <formComponent.Qualifications setState={p => this.setState(p)} skills={skills} education={education} experience={experience} project={project}></formComponent.Qualifications>
         </form>
         <div id="preview">
           <previewComponent.Header name={name} title={title} picture={picture}></previewComponent.Header>
           <previewComponent.Sidebar contacts={contacts} skills={skills}></previewComponent.Sidebar>
-          <previewComponent.Main profile={profile} education={education} experience={experience}></previewComponent.Main>
+          <previewComponent.Main profile={profile} education={education} experience={experience} project={project}></previewComponent.Main>
         </div>
         <Control setState={p => this.setState(p)} picture={picture} showCrop={showCrop} cropIncrementSize={cropIncrementSize}></Control>
       </div>

@@ -59,16 +59,16 @@ form button:hover {
     color: rgb(82, 158, 224);
 }
 
-#form-education ul, #form-experience ul, #form-skills ul {
+#form-education ul, #form-experience ul, #form-skills ul, #project-experience ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-#form-education ul, #form-experience ul {
+#form-education ul, #form-experience ul, #project-experience ul {
     margin-left: 10px;
 }
 
-.education-field, .experience-field {
+.education-field, .experience-field, .project-field {
     position: relative;
     margin-bottom: 10px;
     display: flex;
@@ -81,7 +81,7 @@ form button:hover {
     border-radius: 5px;
 }
 
-.education-field .form-delete-btn, .experience-field .form-delete-btn{
+.education-field .form-delete-btn, .experience-field .form-delete-btn, .project-field .form-delete-btn {
     background-color: rgb(255, 255, 255);
     border: 1px solid black;
     position: absolute;

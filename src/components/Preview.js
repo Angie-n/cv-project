@@ -57,17 +57,78 @@ const Sidebar = props => {
 };
 
 const Main = props => {
-  const {profile, education, experience} = props;
+  const {profile, education, experience, project} = props;
   let profileDisplay = profile;
   let educationDisplay = [...education];
   let experienceDisplay = [...experience];
+  let projectDisplay = [...project];
 
   if(profile === "") profileDisplay = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rhoncus porta enim, non accumsan massa blandit id. Proin consequat porttitor urna ut fermentum.";
   if(education.length === 1 && education[0].name === "" && education[0].startDate === "" && education[0].endDate === "" && education[0].location === "") {
     educationDisplay[0] = infoObjects.Education("Computer Science B.S.", "2010", "2014", "University of Cool Tech");
   }
   if(experience.length === 1 && experience[0].title === "" && experience[0].startDate === "" && experience[0].endDate === "" && experience[0].company === "" && experience[0].location === "" && experience[0].description === "") {
-    experienceDisplay[0] = infoObjects.Experience("Web Developer", "2014", "Present", "Legit Corp", "123 First Street, CA", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.");
+    experienceDisplay[0] = infoObjects.Experience("Web Developer", "2014", "Present", "Legit Corp", "123 First Street, CA", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.");
+  }
+  if(project.length === 1 && project[0].title === "" && project[0].description === "") {
+    projectDisplay[0] = infoObjects.Project("Social Media App", "Suspendisse potenti. Vivamus pulvinar non ipsum quis tristique. Nunc accumsan blandit dui id scelerisque. Morbi id ligula tincidunt, posuere augue non, fermentum lectus. Aliquam erat volutpat. Ut mattis lobortis feugiat. Nunc lacinia nibh id finibus convallis.");
+  }
+
+  function EducationDisplay() {
+    if(educationDisplay.length > 0) {
+      return (
+        <div id="preview-education">
+          <h2>Education</h2>
+          <hr />
+          <ul>
+            {educationDisplay.map((e,i) => {return <li key={"education-" + i}>
+              <h3>{e.name}</h3>
+              <p className="preview-date">{e.startDate} - {e.endDate}</p>
+              <p>{e.location}</p>
+            </li>})}
+          </ul>
+        </div>
+      )
+    }
+    else return null;
+  }
+
+  function ExperienceDisplay() {
+    if(experienceDisplay.length > 0) {
+      return (
+        <div id="preview-experience">
+          <h2>Work Experience</h2>
+          <hr />
+          <ul>
+            {experienceDisplay.map((e,i) => {return <li key={"experience-" + i}>
+              <h3>{e.title}</h3>
+              <p className="preview-date">{e.startDate} - {e.endDate}</p>
+              <p>{e.company + ": " + e.location}</p>
+              <p>{e.description}</p>
+            </li>})}
+          </ul>
+        </div>
+      )
+    }
+    else return null;
+  }
+
+  function ProjectDisplay() {
+    if(projectDisplay.length > 0) {
+      return (
+        <div id="preview-project">
+          <h2>Projects</h2>
+          <hr />
+          <ul>
+            {projectDisplay.map((e,i) => {return <li key={"project-" + i}>
+              <h3>{e.title}</h3>
+              <p>{e.description}</p>
+            </li>})}
+          </ul>
+        </div>
+      )
+    }
+    else return null;
   }
 
   return (
@@ -77,29 +138,9 @@ const Main = props => {
         <hr />
         <p>{profileDisplay}</p>
       </div>
-      <div id="preview-education">
-        <h2>Education</h2>
-        <hr />
-        <ul>
-          {educationDisplay.map((e,i) => {return <li key={"education-" + i}>
-            <h3>{e.name}</h3>
-            <p className="preview-date">{e.startDate} - {e.endDate}</p>
-            <p>{e.location}</p>
-          </li>})}
-        </ul>
-      </div>
-      <div id="preview-experience">
-        <h2>Work Experience</h2>
-        <hr />
-        <ul>
-          {experienceDisplay.map((e,i) => {return <li key={"experience-" + i}>
-            <h3>{e.title}</h3>
-            <p className="preview-date">{e.startDate} - {e.endDate}</p>
-            <p>{e.company + ": " + e.location}</p>
-            <p>{e.description}</p>
-          </li>})}
-        </ul>
-      </div>
+      <EducationDisplay />
+      <ExperienceDisplay />
+      <ProjectDisplay />
     </div>
   );
 };

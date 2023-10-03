@@ -21,11 +21,15 @@ const Education = (name, startDate, endDate, location) => {
 }
 
 const Experience = (title, startDate, endDate, company, location, description) => {
-    return {title, startDate, endDate, company, location, description}
+    return {title, startDate, endDate, company, location, description};
+}
+
+const Project = (title, description) => {
+    return {title, description};
 }
 
 const Picture = (src, marginLeft, marginRight, marginTop, marginBottom, scale) => {
     return {src, marginLeft, marginRight, marginTop, marginBottom, scale};
 }
 
-export {Contact, Education, Experience, Picture}
+export {Contact, Education, Experience, Project, Picture}

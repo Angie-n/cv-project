@@ -91,7 +91,7 @@ const Contacts = props => {
 }
 
 const Qualifications = props => {
-    const {skills, education, experience} = props;
+    const {skills, education, experience, project} = props;
     const setState = props.setState;
 
     const createSkillInput = i => {
@@ -148,19 +148,19 @@ const Qualifications = props => {
             <div className="education-field">
                 <p>
                     <label htmlFor="degreeOrCourse">Degree/Course</label>
-                    <input type="text" className="degreeOrCourse" name="degreeOrCourse" onChange={e => changeEducation("name", e.target.value)} value={education[i].name}></input>
+                    <input type="text" id="degreeOrCourse" name="degreeOrCourse" onChange={e => changeEducation("name", e.target.value)} value={education[i].name}></input>
                 </p>
                 <p>
                     <label htmlFor="educationStartDate">Start Date</label>
-                    <input type="text" className="educationStartDate" name="educationStartDate" onChange={e => changeEducation("startDate", e.target.value)} value={education[i].startDate}></input>
+                    <input type="text" id="educationStartDate" name="educationStartDate" onChange={e => changeEducation("startDate", e.target.value)} value={education[i].startDate}></input>
                 </p>
                 <p>
                     <label htmlFor="educationEndDate">End Date</label>
-                    <input type="text" className="educationEndDate" name="educationEndDate" onChange={e => changeEducation("endDate", e.target.value)} value={education[i].endDate}></input>
+                    <input type="text" id="educationEndDate" name="educationEndDate" onChange={e => changeEducation("endDate", e.target.value)} value={education[i].endDate}></input>
                 </p>
                 <p>
                     <label htmlFor="educationLocation">Location</label>
-                    <input type="text" className="educationLocation" name="educationLocation" onChange={e => changeEducation("location", e.target.value)} value={education[i].location}></input>
+                    <input type="text" id="educationLocation" name="educationLocation" onChange={e => changeEducation("location", e.target.value)} value={education[i].location}></input>
                 </p>
                 <button title="Delete Education" type="button" className="form-delete-btn" onClick={e => removeEducation()}>X</button>
             </div>
@@ -205,29 +205,66 @@ const Qualifications = props => {
             <div className="experience-field">
                 <p>
                     <label htmlFor="experienceTitle">Title</label>
-                    <input type="text" className="experienceTitle" name="experienceTitle" onChange={e => changeExperience("title", e.target.value)} value={experience[i].title}></input>
+                    <input type="text" id="experienceTitle" name="experienceTitle" onChange={e => changeExperience("title", e.target.value)} value={experience[i].title}></input>
                 </p>
                 <p>
                     <label htmlFor="experienceStartDate">Start Date</label>
-                    <input type="text" className="experienceStartDate" name="experienceStartDate" onChange={e => changeExperience("startDate", e.target.value)} value={experience[i].startDate}></input>
+                    <input type="text" id="experienceStartDate" name="experienceStartDate" onChange={e => changeExperience("startDate", e.target.value)} value={experience[i].startDate}></input>
                 </p>
                 <p>
                     <label htmlFor="experienceEndDate">End Date</label>
-                    <input type="text" className="experienceEndDate" name="experienceEndDate" onChange={e => changeExperience("endDate", e.target.value)} value={experience[i].endDate}></input>
+                    <input type="text" id="experienceEndDate" name="experienceEndDate" onChange={e => changeExperience("endDate", e.target.value)} value={experience[i].endDate}></input>
                 </p>
                 <p>
                     <label htmlFor="experienceCompany">Company</label>
-                    <input type="text" className="experienceCompany" name="experienceCompany" onChange={e => changeExperience("company", e.target.value)} value={experience[i].company}></input>
+                    <input type="text" id="experienceCompany" name="experienceCompany" onChange={e => changeExperience("company", e.target.value)} value={experience[i].company}></input>
                 </p>
                 <p>
                     <label htmlFor="experienceLocation">Location</label>
-                    <input type="text" className="experienceLocation" name="experienceLocation" onChange={e => changeExperience("location", e.target.value)} value={experience[i].location}></input>
+                    <input type="text" id="experienceLocation" name="experienceLocation" onChange={e => changeExperience("location", e.target.value)} value={experience[i].location}></input>
                 </p>
                 <p>
                     <label htmlFor="experienceDescription">Description</label>
-                    <textarea className="experienceDescription" name="experienceDescription" onChange={e => changeExperience("description", e.target.value)} value={experience[i].description}></textarea>
+                    <textarea id="experienceDescription" name="experienceDescription" onChange={e => changeExperience("description", e.target.value)} value={experience[i].description}></textarea>
                 </p>
                 <button title="Delete Experience" type="button" className="form-delete-btn" onClick={e => removeExperience()}>X</button>
+            </div>
+        );
+    }
+
+    const createProjectInput = (proj, i) => {
+        const changeProject = (type, value) => {
+            switch(type) {
+                case "title":
+                    proj.title = value;
+                    break;
+                case "description":
+                    proj.description = value;
+                    break;
+                default:
+            }
+            let newProject = [...project];
+            newProject[i] = proj;
+            setState({project: newProject});
+        }
+
+        const removeProject = () => {
+            let newProject = [...project];
+            newProject.splice(i, 1);
+            setState({project: newProject});
+        }
+
+        return (
+            <div className="project-field">
+                <p>
+                    <label htmlFor="projectTitle">Title</label>
+                    <input type="text" id="projectTitle" name="projectTitle" onChange={e => changeProject("title", e.target.value)} value={project[i].title}></input>
+                </p>
+                <p>
+                    <label htmlFor="projectDescription">Description</label>
+                    <textarea id="projectDescription" name="projectDescription" onChange={e => changeProject("description", e.target.value)} value={project[i].description}></textarea>
+                </p>
+                <button title="Delete Project" type="button" className="form-delete-btn" onClick={e => removeProject()}>X</button>
             </div>
         );
     }
@@ -249,6 +286,11 @@ const Qualifications = props => {
             <div id="form-experience">
                 <ul>{experience.map((e,i) => {return <li key={"experienceInput-" + i}>{createExperienceInput(e, i)}</li>})}</ul>
                 <button type="button" onClick={e => setState({experience: experience.concat([infoObjects.Experience("", "", "", "", "", "")])})}>+ Add Experience</button>
+            </div>
+            <h3>Projects</h3>
+            <div id="form-project">
+                <ul>{project.map((e,i) => {return <li key={"projectInput-" + i}>{createProjectInput(e, i)}</li>})}</ul>
+                <button type="button" onClick={e => setState({project: project.concat([infoObjects.Project("", "")])})}>+ Add Project</button>
             </div>
         </section>
     );
