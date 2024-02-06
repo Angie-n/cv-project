@@ -27,13 +27,15 @@ const Sidebar = props => {
   let contactsDisplay = [...contacts];
   let skillsDisplay = [...skills];
 
-  for(let i = 0; i < 4; i++) {
-    if(contacts[i].info === "") {
-      if(i === 0) contactsDisplay[0] = infoObjects.Contact("phone", "(123) 456-7890");
-      else if(i === 1) contactsDisplay[1] = infoObjects.Contact("email", "jane.the.professional@gmail.com");
-      else if(i === 2) contactsDisplay[2] = infoObjects.Contact("linkedIn", "www.linkedin.com/pub/jane-doe/8dh12ja.");
-      else contactsDisplay[3] = infoObjects.Contact("github", "https://github.com/jane-doe");
-    }
+  let isAllEmpty = true;
+  for(let i = 0; i < contactsDisplay.length; i++) {
+    if(contactsDisplay[i].info !== "") isAllEmpty = false;
+  }
+  if(isAllEmpty) {
+      contactsDisplay[0] = infoObjects.Contact("phone", "(123) 456-7890");
+      contactsDisplay[1] = infoObjects.Contact("email", "jane.the.professional@gmail.com");
+      contactsDisplay[2] = infoObjects.Contact("linkedIn", "www.linkedin.com/pub/jane-doe/8dh12ja.");
+      contactsDisplay[3] = infoObjects.Contact("github", "https://github.com/jane-doe");
   }
   if(skills.length === 0) skillsDisplay = ["HTML", "CSS", "Javascript", "Node.js", "React.js"];
 
@@ -43,7 +45,7 @@ const Sidebar = props => {
         <h2>Contacts</h2>
         <hr />
         <ul>
-          {contactsDisplay.map((c,i) => {return <li key={"contact-" + i}><div>{c.icon}<p>{c.info}</p></div></li>})}
+          {contactsDisplay.filter((c) => c.info !== '').map((c,i) => {return <li key={"contact-" + i}><div>{c.icon}<p>{c.info}</p></div></li>})}
         </ul>
       </div>
       <div id="preview-skills">
