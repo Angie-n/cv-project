@@ -77,6 +77,12 @@ const Main = props => {
     projectDisplay[0] = infoObjects.Project("Social Media App", "Suspendisse potenti. Vivamus pulvinar non ipsum quis tristique. Nunc accumsan blandit dui id scelerisque. Morbi id ligula tincidunt, posuere augue non, fermentum lectus. Aliquam erat volutpat. Ut mattis lobortis feugiat. Nunc lacinia nibh id finibus convallis.");
   }
 
+  const getPreviewDate = e => {
+    if(e.startDate && e.endDate) return e.startDate +  '-' + e.endDate;
+    else if(e.startDate) return e.startDate;
+    else return e.endDate;
+  }
+
   function EducationDisplay() {
     if(educationDisplay.length > 0) {
       return (
@@ -86,7 +92,7 @@ const Main = props => {
           <ul>
             {educationDisplay.map((e,i) => {return <li key={"education-" + i}>
               <h3>{e.name}</h3>
-              <p className="preview-date">{e.startDate} - {e.endDate}</p>
+              <p className="preview-date">{getPreviewDate(e)}</p>
               <p>{e.location}</p>
             </li>})}
           </ul>
@@ -105,7 +111,7 @@ const Main = props => {
           <ul>
             {experienceDisplay.map((e,i) => {return <li key={"experience-" + i}>
               <h3>{e.title}</h3>
-              <p className="preview-date">{e.startDate} - {e.endDate}</p>
+              <p className="preview-date">{getPreviewDate(e)}</p>
               <p>{e.company + ": " + e.location}</p>
               <p>{e.description}</p>
             </li>})}
