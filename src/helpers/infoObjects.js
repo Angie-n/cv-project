@@ -18,8 +18,8 @@ const Contact = (type, info) => {
     return {type, info, icon};
 }
 
-const Education = (name, startDate, endDate, location) => {
-    return {name, startDate, endDate, location};
+const Education = (name, startDate, endDate, location, gpa) => {
+    return {name, startDate, endDate, location, gpa};
 }
 
 const Experience = (title, startDate, endDate, company, location, description) => {

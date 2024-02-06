@@ -136,6 +136,9 @@ const Qualifications = props => {
                 case "location":
                     ed.location = value;
                     break;
+                case "gpa":
+                    ed.gpa = value;
+                    break;
                 default:
             }
             let newEducation = [...education];
@@ -167,6 +170,10 @@ const Qualifications = props => {
                 <p>
                     <label htmlFor="educationLocation">Location</label>
                     <input type="text" id="educationLocation" name="educationLocation" onChange={e => changeEducation("location", e.target.value)} value={education[i].location}></input>
+                </p>
+                <p>
+                    <label htmlFor="educationGPA">GPA</label>
+                    <input type="text" id="educationGPA" name="educationGPA" onChange={e => changeEducation("gpa", e.target.value)} value={education[i].gpa}></input>
                 </p>
                 <button title="Delete Education" type="button" className="form-delete-btn" onClick={e => removeEducation()}>X</button>
             </div>

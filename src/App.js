@@ -17,7 +17,7 @@ class App extends Component {
       contacts: [infoObjects.Contact("phone", ""), infoObjects.Contact("email", ""), infoObjects.Contact("linkedIn", ""), infoObjects.Contact("github", "")],
       skills: [],
       profile: "",
-      education: [infoObjects.Education("", "", "", "")],
+      education: [infoObjects.Education("", "", "", "", "")],
       experience: [infoObjects.Experience("", "", "", "", "", "")],
       project: [infoObjects.Project("", "")],
       showCrop: false,

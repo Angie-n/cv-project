@@ -68,7 +68,7 @@ const Main = props => {
 
   if(profile === "") profileDisplay = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rhoncus porta enim, non accumsan massa blandit id. Proin consequat porttitor urna ut fermentum.";
   if(education.length === 1 && education[0].name === "" && education[0].startDate === "" && education[0].endDate === "" && education[0].location === "") {
-    educationDisplay[0] = infoObjects.Education("Computer Science B.S.", "2010", "2014", "University of Cool Tech");
+    educationDisplay[0] = infoObjects.Education("Computer Science B.S.", "2010", "2014", "University of Cool Tech", "4.0");
   }
   if(experience.length === 1 && experience[0].title === "" && experience[0].startDate === "" && experience[0].endDate === "" && experience[0].company === "" && experience[0].location === "" && experience[0].description === "") {
     experienceDisplay[0] = infoObjects.Experience("Web Developer", "2014", "Present", "Legit Corp", "123 First Street, CA", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.");
@@ -84,16 +84,22 @@ const Main = props => {
   }
 
   function EducationDisplay() {
+    const getGPA = (e) => {
+      if(e.gpa) return 'GPA: ' + e.gpa;
+      return '';
+    }
+
     if(educationDisplay.length > 0) {
       return (
         <div id="preview-education">
           <h2>Education</h2>
           <hr />
-          <ul>
+          <ul className='education-item'>
             {educationDisplay.map((e,i) => {return <li key={"education-" + i}>
               <h3>{e.name}</h3>
               <p className="preview-date">{getPreviewDate(e)}</p>
               <p>{e.location}</p>
+              <p>{getGPA(e)}</p>
             </li>})}
           </ul>
         </div>

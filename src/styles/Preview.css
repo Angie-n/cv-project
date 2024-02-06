@@ -108,15 +108,37 @@ hr {
   padding: 10px 0 10px 0;
 }
 
-#preview-main ul li{
+/* #preview-main ul li{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+} */
+
+.education-item li{
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-areas: 
+    "name name name date"
+    "location location location gpa";
 }
 
-#preview-main ul li p:nth-child(3) {
-  width: 100%;
+.education-item li p:nth-child(1) {
+  grid-area: name;
+}
+
+.education-item li p:nth-child(2) {
+  grid-area: date;
+  text-align: end;
+}
+
+.education-item li p:nth-child(3) {
+  grid-area: location;
+}
+
+.education-item li p:nth-child(4) {
+  grid-area: gpa;
+  text-align: end;
 }
 
 .preview-date {
