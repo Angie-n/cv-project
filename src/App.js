@@ -14,7 +14,7 @@ class App extends Component {
       name: "",
       title: "",
       picture: infoObjects.Picture(defaultProfileImage, 0, 0, 0, 0, 1),
-      contacts: [infoObjects.Contact("phone", ""), infoObjects.Contact("email", ""), infoObjects.Contact("linkedIn", "")],
+      contacts: [infoObjects.Contact("phone", ""), infoObjects.Contact("email", ""), infoObjects.Contact("linkedIn", ""), infoObjects.Contact("github", "")],
       skills: [],
       profile: "",
       education: [infoObjects.Education("", "", "", "")],

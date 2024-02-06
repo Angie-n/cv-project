@@ -6,6 +6,8 @@ function findIcon(type) {
             return <i className="fa-solid fa-envelope"></i>
         case 'linkedIn':
             return <i className="fa-brands fa-linkedin"></i>
+        case 'github':
+            return <i className="fa-brands fa-github"></i>
         default:
             return <i className="fa-solid fa-globe"></i>;
     }

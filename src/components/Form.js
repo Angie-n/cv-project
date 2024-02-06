@@ -83,7 +83,13 @@ const Contacts = props => {
                     <input id="linkedIn" name="linkedIn" max="256" onChange={e => changeContact(e.target.value, 2)}></input>
                     </p>
                 </li>
-                {contacts.slice(3, contacts.length).map((c,i) => {return <li key={"otherContactInput-" + i}>{createContactInput(3+i)}</li>})}
+                <li>
+                    <p>
+                    <label htmlFor="github">GitHub</label>
+                    <input id="github" name="github" max="256" onChange={e => changeContact(e.target.value, 3)}></input>
+                    </p>
+                </li>
+                {contacts.slice(4, contacts.length).map((c,i) => {return <li key={"otherContactInput-" + i}>{createContactInput(4+i)}</li>})}
             </ul>
             <button type="button" onClick={e => setState({contacts: contacts.concat([infoObjects.Contact("other", "")])})}>+ Add Contact</button>
         </section>
