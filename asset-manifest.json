@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/cv-project/static/css/main.39f59a4e.css",
-    "main.js": "/cv-project/static/js/main.2fdd02bd.js",
+    "main.css": "/cv-project/static/css/main.55f5677c.css",
+    "main.js": "/cv-project/static/js/main.5aeaa2bc.js",
     "static/media/EBGaramond-VariableFont_wght.ttf": "/cv-project/static/media/EBGaramond-VariableFont_wght.baa0e0cf79395becf7d7.ttf",
     "static/media/EBGaramond-Bold.ttf": "/cv-project/static/media/EBGaramond-Bold.f6c11a06654319d1b8cf.ttf",
     "static/media/default-picture.png": "/cv-project/static/media/default-picture.cada77e0e3d65fb5358e.png",
     "index.html": "/cv-project/index.html",
-    "main.39f59a4e.css.map": "/cv-project/static/css/main.39f59a4e.css.map",
-    "main.2fdd02bd.js.map": "/cv-project/static/js/main.2fdd02bd.js.map"
+    "main.55f5677c.css.map": "/cv-project/static/css/main.55f5677c.css.map",
+    "main.5aeaa2bc.js.map": "/cv-project/static/js/main.5aeaa2bc.js.map"
   },
   "entrypoints": [
-    "static/css/main.39f59a4e.css",
-    "static/js/main.2fdd02bd.js"
+    "static/css/main.55f5677c.css",
+    "static/js/main.5aeaa2bc.js"
   ]
 }
